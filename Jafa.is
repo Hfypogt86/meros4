@@ -1,0 +1,15 @@
+async function saveNotes(notes) {
+    const response = await fetch('/save-notes', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(notes)
+    });
+
+    if (response.ok) {
+        console.log('Notes saved successfully');
+    } else {
+        console.error('Failed to save notes');
+    }
+}
